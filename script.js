@@ -63,10 +63,12 @@ const translations = {
     "routes.tags.food": "Food Walk",
     "routes.tags.ancient": "Antikes Fethiye",
     "routes.tags.nature": "Naturausflug",
-    "closing.eyebrow": "FETHİYE GUIDE APP",
-    "closing.title": "Eine Landingpage, die direkt zur App passt.",
+    "closing.eyebrow": "FETHİYE · MUĞLA",
+    "closing.title": "Bereit für deinen Fethiye-Tag?",
     "closing.text":
-      "Visuell, inhaltlich und strukturell an die vorhandene Fethiye-App gekoppelt, bereit für GitHub Pages.",
+      "Speichere deine Lieblingsorte, finde die passende Route und nimm die besten Strände, Märkte und Aussichtspunkte direkt mit.",
+    "closing.primaryCta": "Orte ansehen",
+    "closing.secondaryCta": "Routen planen",
   },
   en: {
     metaDescription:
@@ -129,10 +131,12 @@ const translations = {
     "routes.tags.food": "Food Walk",
     "routes.tags.ancient": "Ancient Fethiye",
     "routes.tags.nature": "Nature Escape",
-    "closing.eyebrow": "FETHİYE GUIDE APP",
-    "closing.title": "A landing page that fits the app.",
+    "closing.eyebrow": "FETHİYE · MUĞLA",
+    "closing.title": "Ready for your Fethiye day?",
     "closing.text":
-      "Visually, structurally and editorially connected to the existing Fethiye app, ready for GitHub Pages.",
+      "Save favorite places, pick the right route and carry the best beaches, markets and viewpoints with you.",
+    "closing.primaryCta": "View places",
+    "closing.secondaryCta": "Plan routes",
   },
   tr: {
     metaDescription:
@@ -195,10 +199,12 @@ const translations = {
     "routes.tags.food": "Lezzet Yürüyüşü",
     "routes.tags.ancient": "Antik Fethiye",
     "routes.tags.nature": "Doğa Kaçamağı",
-    "closing.eyebrow": "FETHİYE GUIDE APP",
-    "closing.title": "Uygulamayla doğrudan uyumlu bir landing page.",
+    "closing.eyebrow": "FETHİYE · MUĞLA",
+    "closing.title": "Fethiye günün için hazır mısın?",
     "closing.text":
-      "Görsel, içerik ve yapı olarak mevcut Fethiye uygulamasına bağlı, GitHub Pages için hazır.",
+      "Favori yerlerini kaydet, doğru rotayı seç ve en iyi plajları, pazarları ve manzaraları yanında taşı.",
+    "closing.primaryCta": "Yerleri gör",
+    "closing.secondaryCta": "Rota planla",
   },
   ru: {
     metaDescription:
@@ -261,10 +267,12 @@ const translations = {
     "routes.tags.food": "Гастро-прогулка",
     "routes.tags.ancient": "Древний Фетхие",
     "routes.tags.nature": "Природа",
-    "closing.eyebrow": "FETHİYE GUIDE APP",
-    "closing.title": "Лендинг, который подходит приложению.",
+    "closing.eyebrow": "FETHİYE · MUĞLA",
+    "closing.title": "Готовы к дню в Фетхие?",
     "closing.text":
-      "Визуально, структурно и содержательно связан с существующим приложением Fethiye, готов для GitHub Pages.",
+      "Сохраняйте любимые места, выбирайте подходящий маршрут и берите с собой лучшие пляжи, рынки и виды.",
+    "closing.primaryCta": "Смотреть места",
+    "closing.secondaryCta": "Планировать маршрут",
   },
   zh: {
     metaDescription:
@@ -323,9 +331,11 @@ const translations = {
     "routes.tags.food": "美食漫步",
     "routes.tags.ancient": "古代费特希耶",
     "routes.tags.nature": "自然出游",
-    "closing.eyebrow": "FETHİYE GUIDE APP",
-    "closing.title": "与应用真正匹配的落地页。",
-    "closing.text": "在视觉、结构和内容上连接已有的 Fethiye 应用，已为 GitHub Pages 准备好。",
+    "closing.eyebrow": "FETHİYE · MUĞLA",
+    "closing.title": "准备好开始你的费特希耶一天了吗？",
+    "closing.text": "收藏喜欢的地点，选择合适路线，把最好的海滩、集市和观景点带在身边。",
+    "closing.primaryCta": "查看地点",
+    "closing.secondaryCta": "规划路线",
   },
 };
 

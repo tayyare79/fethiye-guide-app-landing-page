@@ -536,6 +536,24 @@ h3 {
   margin-left: auto;
 }
 
+.closing-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.button.primary.light {
+  color: var(--white);
+  background: var(--sea-deep);
+}
+
+.button.secondary.dark {
+  color: var(--sea-deep);
+  border-color: rgba(13, 95, 115, 0.28);
+}
+
 @media (max-width: 920px) {
   .site-header {
     top: 10px;
