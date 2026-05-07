@@ -8,7 +8,7 @@ const translations = {
     "hero.eyebrow": "FETHİYE · MUĞLA · LOCAL GUIDE",
     "hero.lead":
       "Die App für Fethiye: Strände, antike Orte, Restaurants, Tagesrouten und eine Karte, die direkt auf die wichtigsten Spots führt.",
-    "hero.primaryCta": "App ansehen",
+    "hero.primaryCta": "Im App Store laden",
     "hero.secondaryCta": "Orte entdecken",
     "signals.discover": "Entdecken",
     "signals.map": "Karte",
@@ -67,7 +67,7 @@ const translations = {
     "closing.title": "Bereit für deinen Fethiye-Tag?",
     "closing.text":
       "Speichere deine Lieblingsorte, finde die passende Route und nimm die besten Strände, Märkte und Aussichtspunkte direkt mit.",
-    "closing.primaryCta": "Orte ansehen",
+    "closing.primaryCta": "Im App Store laden",
     "closing.secondaryCta": "Routen planen",
   },
   en: {
@@ -79,7 +79,7 @@ const translations = {
     "hero.eyebrow": "FETHİYE · MUĞLA · LOCAL GUIDE",
     "hero.lead":
       "The Fethiye app for beaches, ancient sites, restaurants, day plans and a map that takes you straight to the right spots.",
-    "hero.primaryCta": "View the app",
+    "hero.primaryCta": "Download on the App Store",
     "hero.secondaryCta": "Discover places",
     "signals.discover": "Discover",
     "signals.map": "Explore Map",
@@ -135,7 +135,7 @@ const translations = {
     "closing.title": "Ready for your Fethiye day?",
     "closing.text":
       "Save favorite places, pick the right route and carry the best beaches, markets and viewpoints with you.",
-    "closing.primaryCta": "View places",
+    "closing.primaryCta": "Download on the App Store",
     "closing.secondaryCta": "Plan routes",
   },
   tr: {
@@ -147,7 +147,7 @@ const translations = {
     "hero.eyebrow": "FETHİYE · MUĞLA · YEREL REHBER",
     "hero.lead":
       "Fethiye için uygulama: plajlar, antik yerler, restoranlar, günlük rotalar ve seni doğru noktalara götüren bir harita.",
-    "hero.primaryCta": "Uygulamayı gör",
+    "hero.primaryCta": "App Store'dan indir",
     "hero.secondaryCta": "Yerleri keşfet",
     "signals.discover": "Keşfet",
     "signals.map": "Harita",
@@ -203,7 +203,7 @@ const translations = {
     "closing.title": "Fethiye günün için hazır mısın?",
     "closing.text":
       "Favori yerlerini kaydet, doğru rotayı seç ve en iyi plajları, pazarları ve manzaraları yanında taşı.",
-    "closing.primaryCta": "Yerleri gör",
+    "closing.primaryCta": "App Store'dan indir",
     "closing.secondaryCta": "Rota planla",
   },
   ru: {
@@ -215,7 +215,7 @@ const translations = {
     "hero.eyebrow": "ФЕТХИЕ · МУГЛА · ЛОКАЛЬНЫЙ ГИД",
     "hero.lead":
       "Приложение для Фетхие: пляжи, древние места, рестораны, планы на день и карта, которая ведет к нужным точкам.",
-    "hero.primaryCta": "Смотреть приложение",
+    "hero.primaryCta": "Скачать в App Store",
     "hero.secondaryCta": "Открыть места",
     "signals.discover": "Открыть",
     "signals.map": "Карта",
@@ -271,7 +271,7 @@ const translations = {
     "closing.title": "Готовы к дню в Фетхие?",
     "closing.text":
       "Сохраняйте любимые места, выбирайте подходящий маршрут и берите с собой лучшие пляжи, рынки и виды.",
-    "closing.primaryCta": "Смотреть места",
+    "closing.primaryCta": "Скачать в App Store",
     "closing.secondaryCta": "Планировать маршрут",
   },
   zh: {
@@ -282,7 +282,7 @@ const translations = {
     "nav.routes": "路线",
     "hero.eyebrow": "费特希耶 · 穆拉 · 本地指南",
     "hero.lead": "为费特希耶而做的应用：海滩、古迹、餐厅、一日路线，以及带你直接找到重点地点的地图。",
-    "hero.primaryCta": "查看应用",
+    "hero.primaryCta": "在 App Store 下载",
     "hero.secondaryCta": "探索地点",
     "signals.discover": "发现",
     "signals.map": "地图",
@@ -334,7 +334,7 @@ const translations = {
     "closing.eyebrow": "FETHİYE · MUĞLA",
     "closing.title": "准备好开始你的费特希耶一天了吗？",
     "closing.text": "收藏喜欢的地点，选择合适路线，把最好的海滩、集市和观景点带在身边。",
-    "closing.primaryCta": "查看地点",
+    "closing.primaryCta": "在 App Store 下载",
     "closing.secondaryCta": "规划路线",
   },
 };

@@ -3,6 +3,7 @@ import path from "node:path";
 
 const root = process.cwd();
 const siteUrl = "https://fethiye-app.com";
+const appStoreUrl = "https://apps.apple.com/de/app/fethiye-guide/id6766074524";
 const languages = ["de", "en", "tr", "ru", "zh"];
 const languageNames = { de: "DE", en: "EN", tr: "TR", ru: "RU", zh: "中文" };
 const localeCodes = { de: "de_DE", en: "en_GB", tr: "tr_TR", ru: "ru_RU", zh: "zh_CN" };
@@ -236,6 +237,8 @@ function structuredData(lang, currentUrl) {
       inLanguage: lang,
       description: dict.metaDescription,
       url: currentUrl,
+      downloadUrl: appStoreUrl,
+      installUrl: appStoreUrl,
       image: `${siteUrl}/assets/images/fethiye-promenade.jpg`,
       offers: {
         "@type": "Offer",
