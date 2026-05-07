@@ -557,6 +557,76 @@ h3 {
   border-color: rgba(13, 95, 115, 0.28);
 }
 
+.site-footer {
+  display: flex;
+  width: min(calc(100% - 40px), var(--max));
+  margin: 0 auto;
+  padding: 26px 0 34px;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  color: var(--stone);
+  font-size: 0.9rem;
+  font-weight: 750;
+}
+
+.site-footer span {
+  color: var(--charcoal);
+}
+
+.site-footer a:hover,
+.site-footer a:focus-visible {
+  color: var(--sea-deep);
+  outline: none;
+}
+
+.legal-page {
+  width: min(calc(100% - 40px), 930px);
+  margin: 0 auto;
+  padding: 146px 0 70px;
+}
+
+.legal-hero {
+  margin-bottom: 28px;
+}
+
+.legal-hero h1 {
+  margin-bottom: 20px;
+  color: var(--charcoal);
+  font-size: clamp(3.2rem, 8vw, 6.6rem);
+}
+
+.legal-hero .lead {
+  max-width: 760px;
+  color: var(--stone);
+}
+
+.legal-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.legal-card {
+  padding: 24px;
+  border: 1px solid rgba(45, 73, 78, 0.14);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 16px 44px rgba(31, 49, 54, 0.08);
+}
+
+.legal-card h2 {
+  margin-bottom: 8px;
+  font-family: inherit;
+  font-size: 1.22rem;
+  line-height: 1.25;
+}
+
+.legal-card p {
+  margin-bottom: 0;
+  color: var(--stone);
+  line-height: 1.7;
+}
+
 @media (max-width: 920px) {
   .site-header {
     top: 10px;
@@ -603,6 +673,8 @@ h3 {
 
 @media (max-width: 640px) {
   .site-header {
+    position: absolute;
+    top: calc(env(safe-area-inset-top, 0px) + 12px);
     align-items: stretch;
     border-radius: 22px;
     flex-direction: column;
@@ -644,7 +716,7 @@ h3 {
   .hero-inner {
     width: min(calc(100% - 26px), var(--max));
     min-height: inherit;
-    padding-top: 136px;
+    padding-top: 230px;
     padding-bottom: 24px;
   }
 
@@ -676,8 +748,15 @@ h3 {
   .app-section,
   .places-section,
   .route-section,
-  .closing-section {
+  .closing-section,
+  .site-footer,
+  .legal-page {
     width: min(calc(100% - 26px), var(--max));
+  }
+
+  .site-footer {
+    flex-wrap: wrap;
+    padding-bottom: 28px;
   }
 
   .places-grid {
