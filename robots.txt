@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tayyare79.github.io/fethiye-guide-app-landing-page/sitemap.xml
+Sitemap: https://fethiye-app.com/sitemap.xml

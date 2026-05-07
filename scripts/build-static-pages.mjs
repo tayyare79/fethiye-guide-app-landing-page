@@ -2,7 +2,7 @@ import { mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 const root = process.cwd();
-const siteUrl = "https://tayyare79.github.io/fethiye-guide-app-landing-page";
+const siteUrl = "https://fethiye-app.com";
 const languages = ["de", "en", "tr", "ru", "zh"];
 const languageNames = { de: "DE", en: "EN", tr: "TR", ru: "RU", zh: "中文" };
 const localeCodes = { de: "de_DE", en: "en_GB", tr: "tr_TR", ru: "ru_RU", zh: "zh_CN" };
@@ -171,7 +171,7 @@ function renderSitemap() {
   const urls = [siteUrl + "/", ...languages.map((lang) => langPaths[lang])];
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls
     .map(
-      (url) => `  <url>\n    <loc>${url}</loc>\n    <lastmod>${now}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>${url.endsWith("/fethiye-guide-app-landing-page/") ? "1.0" : "0.9"}</priority>\n  </url>`,
+      (url) => `  <url>\n    <loc>${url}</loc>\n    <lastmod>${now}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>${url === `${siteUrl}/` ? "1.0" : "0.9"}</priority>\n  </url>`,
     )
     .join("\n")}\n</urlset>\n`;
 }

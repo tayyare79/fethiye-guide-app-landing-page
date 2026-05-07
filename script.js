@@ -344,11 +344,11 @@ const translatableNodes = document.querySelectorAll("[data-i18n]");
 const description = document.querySelector('meta[name="description"]');
 const storageKey = "fethiye-guide-language";
 const languagePaths = {
-  de: "/fethiye-guide-app-landing-page/de/",
-  en: "/fethiye-guide-app-landing-page/en/",
-  tr: "/fethiye-guide-app-landing-page/tr/",
-  ru: "/fethiye-guide-app-landing-page/ru/",
-  zh: "/fethiye-guide-app-landing-page/zh/",
+  de: "/de/",
+  en: "/en/",
+  tr: "/tr/",
+  ru: "/ru/",
+  zh: "/zh/",
 };
 const languageTitles = {
   de: "Fethiye Guide App - Reiseführer für Strände, Routen und Orte",
