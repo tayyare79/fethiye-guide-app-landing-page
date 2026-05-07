@@ -343,12 +343,26 @@ const languageButtons = document.querySelectorAll("[data-lang-option]");
 const translatableNodes = document.querySelectorAll("[data-i18n]");
 const description = document.querySelector('meta[name="description"]');
 const storageKey = "fethiye-guide-language";
+const languagePaths = {
+  de: "/fethiye-guide-app-landing-page/de/",
+  en: "/fethiye-guide-app-landing-page/en/",
+  tr: "/fethiye-guide-app-landing-page/tr/",
+  ru: "/fethiye-guide-app-landing-page/ru/",
+  zh: "/fethiye-guide-app-landing-page/zh/",
+};
+const languageTitles = {
+  de: "Fethiye Guide App - Reiseführer für Strände, Routen und Orte",
+  en: "Fethiye Guide App - Beaches, Routes and Local Places",
+  tr: "Fethiye Guide App - Fethiye Rehberi, Plajlar ve Rotalar",
+  ru: "Fethiye Guide App - пляжи, маршруты и места Фетхие",
+  zh: "Fethiye Guide App - 费特希耶海滩、路线和地点指南",
+};
 
 function setLanguage(language) {
   const dictionary = translations[language] || translations.de;
 
   document.documentElement.lang = language;
-  document.title = language === "de" ? "Fethiye Guide App" : `Fethiye Guide App · ${language.toUpperCase()}`;
+  document.title = languageTitles[language] || languageTitles.de;
 
   if (description) {
     description.setAttribute("content", dictionary.metaDescription);
@@ -371,13 +385,28 @@ function setLanguage(language) {
 }
 
 languageButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    setLanguage(button.getAttribute("data-lang-option"));
+  button.addEventListener("click", (event) => {
+    const language = button.getAttribute("data-lang-option");
+    setLanguage(language);
+
+    if (button.tagName.toLowerCase() === "a") {
+      return;
+    }
+
+    const targetPath = languagePaths[language];
+    if (targetPath && window.location.pathname !== targetPath) {
+      event.preventDefault();
+      window.location.href = `${targetPath}${window.location.hash || ""}`;
+    }
   });
 });
 
 const browserLanguage = navigator.language.slice(0, 2);
 const savedLanguage = localStorage.getItem(storageKey);
-const initialLanguage = savedLanguage || (translations[browserLanguage] ? browserLanguage : "de");
+const pathLanguage = window.location.pathname
+  .split("/")
+  .filter(Boolean)
+  .find((part) => translations[part]);
+const initialLanguage = pathLanguage || savedLanguage || (translations[browserLanguage] ? browserLanguage : "de");
 
 setLanguage(initialLanguage);
