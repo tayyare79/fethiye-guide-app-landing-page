@@ -6,12 +6,19 @@
     <title>Fethiye Guide App - пляжи, маршруты и места Фетхие</title>
     <meta name="description" content="Fethiye Guide - локальное приложение для пляжей, маршрутов, ресторанов, карты и избранных мест вокруг Фетхие и Муглы." />
     <meta name="theme-color" content="#0d5f73" />
+    <meta name="apple-itunes-app" content="app-id=6766074524" />
+    <meta name="apple-mobile-web-app-title" content="Fethiye Guide" />
     <meta property="og:title" content="Fethiye Guide App - пляжи, маршруты и места Фетхие" />
     <meta property="og:description" content="Откройте Фетхие с подборками мест, маршрутами на день, картой и реальными фото из приложения." />
     <meta property="og:image" content="https://fethiye-app.com/assets/images/fethiye-promenade.jpg" />
     <meta property="og:url" content="https://fethiye-app.com/ru/" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ru_RU" />
+    <meta property="og:image:alt" content="Fethiye Promenade am Meer" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Fethiye Guide App - пляжи, маршруты и места Фетхие" />
+    <meta name="twitter:description" content="Откройте Фетхие с подборками мест, маршрутами на день, картой и реальными фото из приложения." />
+    <meta name="twitter:image" content="https://fethiye-app.com/assets/images/fethiye-promenade.jpg" />
     <link rel="canonical" href="https://fethiye-app.com/ru/" />
     <link rel="alternate" hreflang="de" href="https://fethiye-app.com/de/" />
     <link rel="alternate" hreflang="en" href="https://fethiye-app.com/en/" />
@@ -27,13 +34,20 @@
   "@type": "MobileApplication",
   "name": "Fethiye Guide",
   "applicationCategory": "TravelApplication",
-  "operatingSystem": "iOS, Android",
+  "operatingSystem": "iOS",
   "inLanguage": "ru",
   "description": "Fethiye Guide - локальное приложение для пляжей, маршрутов, ресторанов, карты и избранных мест вокруг Фетхие и Муглы.",
   "url": "https://fethiye-app.com/ru/",
   "downloadUrl": "https://apps.apple.com/de/app/fethiye-guide/id6766074524",
   "installUrl": "https://apps.apple.com/de/app/fethiye-guide/id6766074524",
+  "sameAs": [
+    "https://apps.apple.com/de/app/fethiye-guide/id6766074524"
+  ],
   "image": "https://fethiye-app.com/assets/images/fethiye-promenade.jpg",
+  "publisher": {
+    "@type": "Person",
+    "name": "Harun Nakas"
+  },
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -55,6 +69,46 @@
     "Kayaköy",
     "Muğla",
     "Turkish Riviera"
+  ]
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Для кого Fethiye Guide?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Для путешественников и местных гостей, которые хотят быстро находить пляжи, виды, рестораны, рынки и маршруты на день."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Какие места есть в приложении?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Приложение объединяет основные места вокруг Фетхие и Муглы: Олюдениз, Каякёй, Бабадаг, Саклыкент и локальные гастро-точки."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Можно ли сохранять места?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да. Избранное и заметки остаются локально на вашем устройстве, чтобы быстрее планировать поездку на месте."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Приложение многоязычное?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Сайт доступен на немецком, английском, турецком, русском и китайском языках. Приложение рассчитано на международных гостей Фетхие."
+      }
+    }
   ]
 }
     </script>
@@ -111,6 +165,11 @@
               <span data-i18n="signals.routes">Планы дня</span>
               <span data-i18n="signals.saved">Сохранено</span>
             </div>
+            <div class="store-proof" aria-label="App Store Hinweise">
+              <span data-i18n="proof.platform">iOS-приложение в App Store</span>
+              <span data-i18n="proof.saved">Избранное хранится локально</span>
+              <span data-i18n="proof.map">Карта и маршруты на день</span>
+            </div>
           </div>
 
           <div class="device-stage" aria-label="App Vorschau">
@@ -159,6 +218,8 @@
             <img
               src="../assets/screenshots/ipad-guide.png"
               alt="Fethiye Guide App Screenshot auf iPad"
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <div class="feature-list">
@@ -195,7 +256,7 @@
 
         <div class="places-grid">
           <article class="place-card wide">
-            <img src="../assets/images/oluedeniz-lagoon.jpg" alt="Ölüdeniz Blue Lagoon" />
+            <img src="../assets/images/oluedeniz-lagoon.jpg" alt="Ölüdeniz Blue Lagoon" loading="lazy" decoding="async" />
             <div>
               <span data-i18n="placeCards.beach.category">Пляж</span>
               <h3>Ölüdeniz Blue Lagoon</h3>
@@ -203,7 +264,7 @@
             </div>
           </article>
           <article class="place-card">
-            <img src="../assets/images/kayakoy.jpg" alt="Kayaköy Ghost Village" />
+            <img src="../assets/images/kayakoy.jpg" alt="Kayaköy Ghost Village" loading="lazy" decoding="async" />
             <div>
               <span data-i18n="placeCards.ruins.category">Руины</span>
               <h3>Kayaköy</h3>
@@ -211,7 +272,7 @@
             </div>
           </article>
           <article class="place-card">
-            <img src="../assets/images/babadag.jpg" alt="Babadag mountain" />
+            <img src="../assets/images/babadag.jpg" alt="Babadag mountain" loading="lazy" decoding="async" />
             <div>
               <span data-i18n="placeCards.viewpoint.category">Вид</span>
               <h3>Babadag</h3>
@@ -219,7 +280,7 @@
             </div>
           </article>
           <article class="place-card">
-            <img src="../assets/images/butterfly-valley.jpg" alt="Butterfly Valley" />
+            <img src="../assets/images/butterfly-valley.jpg" alt="Butterfly Valley" loading="lazy" decoding="async" />
             <div>
               <span data-i18n="placeCards.nature.category">Природа</span>
               <h3>Butterfly Valley</h3>
@@ -227,7 +288,7 @@
             </div>
           </article>
           <article class="place-card">
-            <img src="../assets/images/fish-market.jpg" alt="Fethiye fish market" />
+            <img src="../assets/images/fish-market.jpg" alt="Fethiye fish market" loading="lazy" decoding="async" />
             <div>
               <span data-i18n="placeCards.food.category">Еда</span>
               <h3>Fish Market</h3>
@@ -250,12 +311,38 @@
           </div>
         </div>
         <div class="route-image">
-          <img src="../assets/images/saklikent.jpg" alt="Saklikent canyon" />
+          <img src="../assets/images/saklikent.jpg" alt="Saklikent canyon" loading="lazy" decoding="async" />
+        </div>
+      </section>
+
+      <section class="faq-section" id="faq">
+        <div class="section-copy">
+          <p class="eyebrow" data-i18n="faq.eyebrow">FAQ</p>
+          <h2 data-i18n="faq.title">Перед загрузкой.</h2>
+          <p data-i18n="faq.text">Главные вопросы для тех, кто планирует Фетхие или уже находится рядом.</p>
+        </div>
+        <div class="faq-grid">
+          <article>
+            <h3 data-i18n="faq.one.question">Для кого Fethiye Guide?</h3>
+            <p data-i18n="faq.one.answer">Для путешественников и местных гостей, которые хотят быстро находить пляжи, виды, рестораны, рынки и маршруты на день.</p>
+          </article>
+          <article>
+            <h3 data-i18n="faq.two.question">Какие места есть в приложении?</h3>
+            <p data-i18n="faq.two.answer">Приложение объединяет основные места вокруг Фетхие и Муглы: Олюдениз, Каякёй, Бабадаг, Саклыкент и локальные гастро-точки.</p>
+          </article>
+          <article>
+            <h3 data-i18n="faq.three.question">Можно ли сохранять места?</h3>
+            <p data-i18n="faq.three.answer">Да. Избранное и заметки остаются локально на вашем устройстве, чтобы быстрее планировать поездку на месте.</p>
+          </article>
+          <article>
+            <h3 data-i18n="faq.four.question">Приложение многоязычное?</h3>
+            <p data-i18n="faq.four.answer">Сайт доступен на немецком, английском, турецком, русском и китайском языках. Приложение рассчитано на международных гостей Фетхие.</p>
+          </article>
         </div>
       </section>
 
       <section class="closing-section">
-        <img src="../assets/images/app-icon.png" alt="" />
+        <img src="../assets/images/app-icon.png" alt="" loading="lazy" decoding="async" />
         <p class="eyebrow" data-i18n="closing.eyebrow">FETHİYE · MUĞLA</p>
         <h2 data-i18n="closing.title">Готовы к дню в Фетхие?</h2>
         <p data-i18n="closing.text">Сохраняйте любимые места, выбирайте подходящий маршрут и берите с собой лучшие пляжи, рынки и виды.</p>
@@ -276,6 +363,16 @@
       <a href="privacy/">Privacy Policy</a>
       <a href="support/">Support</a>
     </footer>
+    <aside class="mobile-install-bar" aria-label="App Store Download">
+      <img src="../assets/images/app-icon.png" alt="" />
+      <span data-i18n="installBar.text">Fethiye Guide в поездке</span>
+      <a
+        href="https://apps.apple.com/de/app/fethiye-guide/id6766074524"
+        target="_blank"
+        rel="noopener noreferrer"
+        data-i18n="installBar.cta"
+      >Скачать</a>
+    </aside>
     <script src="../script.js"></script>
   </body>
 </html>

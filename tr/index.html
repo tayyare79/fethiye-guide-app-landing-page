@@ -6,12 +6,19 @@
     <title>Fethiye Guide App - Fethiye Rehberi, Plajlar ve Rotalar</title>
     <meta name="description" content="Fethiye Guide, Fethiye ve Muğla çevresindeki plajlar, rotalar, restoranlar, harita ve kayıtlı favoriler için yerel seyahat uygulamasıdır." />
     <meta name="theme-color" content="#0d5f73" />
+    <meta name="apple-itunes-app" content="app-id=6766074524" />
+    <meta name="apple-mobile-web-app-title" content="Fethiye Guide" />
     <meta property="og:title" content="Fethiye Guide App - Fethiye Rehberi, Plajlar ve Rotalar" />
     <meta property="og:description" content="Fethiye'yi seçilmiş yerler, günlük rotalar, harita ve gerçek uygulama fotoğraflarıyla keşfet." />
     <meta property="og:image" content="https://fethiye-app.com/assets/images/fethiye-promenade.jpg" />
     <meta property="og:url" content="https://fethiye-app.com/tr/" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="tr_TR" />
+    <meta property="og:image:alt" content="Fethiye Promenade am Meer" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Fethiye Guide App - Fethiye Rehberi, Plajlar ve Rotalar" />
+    <meta name="twitter:description" content="Fethiye'yi seçilmiş yerler, günlük rotalar, harita ve gerçek uygulama fotoğraflarıyla keşfet." />
+    <meta name="twitter:image" content="https://fethiye-app.com/assets/images/fethiye-promenade.jpg" />
     <link rel="canonical" href="https://fethiye-app.com/tr/" />
     <link rel="alternate" hreflang="de" href="https://fethiye-app.com/de/" />
     <link rel="alternate" hreflang="en" href="https://fethiye-app.com/en/" />
@@ -27,13 +34,20 @@
   "@type": "MobileApplication",
   "name": "Fethiye Guide",
   "applicationCategory": "TravelApplication",
-  "operatingSystem": "iOS, Android",
+  "operatingSystem": "iOS",
   "inLanguage": "tr",
   "description": "Fethiye Guide, Fethiye ve Muğla çevresindeki plajlar, rotalar, restoranlar, harita ve kayıtlı favoriler için yerel seyahat uygulamasıdır.",
   "url": "https://fethiye-app.com/tr/",
   "downloadUrl": "https://apps.apple.com/de/app/fethiye-guide/id6766074524",
   "installUrl": "https://apps.apple.com/de/app/fethiye-guide/id6766074524",
+  "sameAs": [
+    "https://apps.apple.com/de/app/fethiye-guide/id6766074524"
+  ],
   "image": "https://fethiye-app.com/assets/images/fethiye-promenade.jpg",
+  "publisher": {
+    "@type": "Person",
+    "name": "Harun Nakas"
+  },
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -55,6 +69,46 @@
     "Kayaköy",
     "Muğla",
     "Turkish Riviera"
+  ]
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Fethiye Guide kimler için?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Plajları, manzaraları, restoranları, pazarları ve günlük rotaları hızlı bulmak isteyen gezginler ve yerel ziyaretçiler için."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hangi yerler var?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Uygulama Fethiye ve Muğla çevresindeki Ölüdeniz, Kayaköy, Babadağ, Saklıkent ve yerel lezzet noktaları gibi öne çıkan yerleri bir araya getirir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Yerleri kaydedebilir miyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet. Favoriler ve notlar cihazında yerel olarak kalır; böylece geziyi bölgede daha hızlı planlayabilirsin."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Uygulama çok dilli mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Website Almanca, İngilizce, Türkçe, Rusça ve Çince olarak kullanılabilir. Uygulama uluslararası Fethiye ziyaretçileri için tasarlandı."
+      }
+    }
   ]
 }
     </script>
@@ -111,6 +165,11 @@
               <span data-i18n="signals.routes">Günlük Rotalar</span>
               <span data-i18n="signals.saved">Kayıtlı</span>
             </div>
+            <div class="store-proof" aria-label="App Store Hinweise">
+              <span data-i18n="proof.platform">App Store'da iOS uygulaması</span>
+              <span data-i18n="proof.saved">Favorileri yerel kaydet</span>
+              <span data-i18n="proof.map">Harita ve günlük rotalar</span>
+            </div>
           </div>
 
           <div class="device-stage" aria-label="App Vorschau">
@@ -159,6 +218,8 @@
             <img
               src="../assets/screenshots/ipad-guide.png"
               alt="Fethiye Guide App Screenshot auf iPad"
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <div class="feature-list">
@@ -195,7 +256,7 @@
 
         <div class="places-grid">
           <article class="place-card wide">
-            <img src="../assets/images/oluedeniz-lagoon.jpg" alt="Ölüdeniz Blue Lagoon" />
+            <img src="../assets/images/oluedeniz-lagoon.jpg" alt="Ölüdeniz Blue Lagoon" loading="lazy" decoding="async" />
             <div>
               <span data-i18n="placeCards.beach.category">Plaj</span>
               <h3>Ölüdeniz Blue Lagoon</h3>
@@ -203,7 +264,7 @@
             </div>
           </article>
           <article class="place-card">
-            <img src="../assets/images/kayakoy.jpg" alt="Kayaköy Ghost Village" />
+            <img src="../assets/images/kayakoy.jpg" alt="Kayaköy Ghost Village" loading="lazy" decoding="async" />
             <div>
               <span data-i18n="placeCards.ruins.category">Kalıntılar</span>
               <h3>Kayaköy</h3>
@@ -211,7 +272,7 @@
             </div>
           </article>
           <article class="place-card">
-            <img src="../assets/images/babadag.jpg" alt="Babadag mountain" />
+            <img src="../assets/images/babadag.jpg" alt="Babadag mountain" loading="lazy" decoding="async" />
             <div>
               <span data-i18n="placeCards.viewpoint.category">Manzara</span>
               <h3>Babadag</h3>
@@ -219,7 +280,7 @@
             </div>
           </article>
           <article class="place-card">
-            <img src="../assets/images/butterfly-valley.jpg" alt="Butterfly Valley" />
+            <img src="../assets/images/butterfly-valley.jpg" alt="Butterfly Valley" loading="lazy" decoding="async" />
             <div>
               <span data-i18n="placeCards.nature.category">Doğa</span>
               <h3>Butterfly Valley</h3>
@@ -227,7 +288,7 @@
             </div>
           </article>
           <article class="place-card">
-            <img src="../assets/images/fish-market.jpg" alt="Fethiye fish market" />
+            <img src="../assets/images/fish-market.jpg" alt="Fethiye fish market" loading="lazy" decoding="async" />
             <div>
               <span data-i18n="placeCards.food.category">Yemek</span>
               <h3>Fish Market</h3>
@@ -250,12 +311,38 @@
           </div>
         </div>
         <div class="route-image">
-          <img src="../assets/images/saklikent.jpg" alt="Saklikent canyon" />
+          <img src="../assets/images/saklikent.jpg" alt="Saklikent canyon" loading="lazy" decoding="async" />
+        </div>
+      </section>
+
+      <section class="faq-section" id="faq">
+        <div class="section-copy">
+          <p class="eyebrow" data-i18n="faq.eyebrow">SSS</p>
+          <h2 data-i18n="faq.title">İndirmeden önce.</h2>
+          <p data-i18n="faq.text">Fethiye gezisini planlayan veya bölgede olan ziyaretçiler için en önemli sorular.</p>
+        </div>
+        <div class="faq-grid">
+          <article>
+            <h3 data-i18n="faq.one.question">Fethiye Guide kimler için?</h3>
+            <p data-i18n="faq.one.answer">Plajları, manzaraları, restoranları, pazarları ve günlük rotaları hızlı bulmak isteyen gezginler ve yerel ziyaretçiler için.</p>
+          </article>
+          <article>
+            <h3 data-i18n="faq.two.question">Hangi yerler var?</h3>
+            <p data-i18n="faq.two.answer">Uygulama Fethiye ve Muğla çevresindeki Ölüdeniz, Kayaköy, Babadağ, Saklıkent ve yerel lezzet noktaları gibi öne çıkan yerleri bir araya getirir.</p>
+          </article>
+          <article>
+            <h3 data-i18n="faq.three.question">Yerleri kaydedebilir miyim?</h3>
+            <p data-i18n="faq.three.answer">Evet. Favoriler ve notlar cihazında yerel olarak kalır; böylece geziyi bölgede daha hızlı planlayabilirsin.</p>
+          </article>
+          <article>
+            <h3 data-i18n="faq.four.question">Uygulama çok dilli mi?</h3>
+            <p data-i18n="faq.four.answer">Website Almanca, İngilizce, Türkçe, Rusça ve Çince olarak kullanılabilir. Uygulama uluslararası Fethiye ziyaretçileri için tasarlandı.</p>
+          </article>
         </div>
       </section>
 
       <section class="closing-section">
-        <img src="../assets/images/app-icon.png" alt="" />
+        <img src="../assets/images/app-icon.png" alt="" loading="lazy" decoding="async" />
         <p class="eyebrow" data-i18n="closing.eyebrow">FETHİYE · MUĞLA</p>
         <h2 data-i18n="closing.title">Fethiye günün için hazır mısın?</h2>
         <p data-i18n="closing.text">Favori yerlerini kaydet, doğru rotayı seç ve en iyi plajları, pazarları ve manzaraları yanında taşı.</p>
@@ -276,6 +363,16 @@
       <a href="privacy/">Privacy Policy</a>
       <a href="support/">Support</a>
     </footer>
+    <aside class="mobile-install-bar" aria-label="App Store Download">
+      <img src="../assets/images/app-icon.png" alt="" />
+      <span data-i18n="installBar.text">Fethiye Guide yanında</span>
+      <a
+        href="https://apps.apple.com/de/app/fethiye-guide/id6766074524"
+        target="_blank"
+        rel="noopener noreferrer"
+        data-i18n="installBar.cta"
+      >İndir</a>
+    </aside>
     <script src="../script.js"></script>
   </body>
 </html>

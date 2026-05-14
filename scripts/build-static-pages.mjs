@@ -233,13 +233,18 @@ function structuredData(lang, currentUrl) {
       "@type": "MobileApplication",
       name: "Fethiye Guide",
       applicationCategory: "TravelApplication",
-      operatingSystem: "iOS, Android",
+      operatingSystem: "iOS",
       inLanguage: lang,
       description: dict.metaDescription,
       url: currentUrl,
       downloadUrl: appStoreUrl,
       installUrl: appStoreUrl,
+      sameAs: [appStoreUrl],
       image: `${siteUrl}/assets/images/fethiye-promenade.jpg`,
+      publisher: {
+        "@type": "Person",
+        name: "Harun Nakas",
+      },
       offers: {
         "@type": "Offer",
         price: "0",
@@ -250,6 +255,29 @@ function structuredData(lang, currentUrl) {
         { "@type": "AdministrativeArea", name: "Muğla" },
       ],
       about: ["Fethiye", "Ölüdeniz", "Kayaköy", "Muğla", "Turkish Riviera"],
+    },
+    null,
+    2,
+  );
+}
+
+function faqStructuredData(lang) {
+  const dict = translations[lang];
+  return JSON.stringify(
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [1, 2, 3, 4].map((number) => {
+        const word = ["one", "two", "three", "four"][number - 1];
+        return {
+          "@type": "Question",
+          name: dict[`faq.${word}.question`],
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: dict[`faq.${word}.answer`],
+          },
+        };
+      }),
     },
     null,
     2,
@@ -277,8 +305,20 @@ function renderLanguagePage(lang) {
     `<meta property="og:description" content="${escapeHtml(ogDescriptions[lang])}" />`,
   );
   html = html.replace(
+    /<meta name="twitter:title" content="[^"]*" \/>/,
+    `<meta name="twitter:title" content="${escapeHtml(titles[lang])}" />`,
+  );
+  html = html.replace(
+    /<meta\s+name="twitter:description"\s+content="[^"]*"\s*\/>/,
+    `<meta name="twitter:description" content="${escapeHtml(ogDescriptions[lang])}" />`,
+  );
+  html = html.replace(
     '<meta property="og:image" content="assets/images/fethiye-promenade.jpg" />',
     `<meta property="og:image" content="${siteUrl}/assets/images/fethiye-promenade.jpg" />\n    <meta property="og:url" content="${currentUrl}" />\n    <meta property="og:type" content="website" />\n    <meta property="og:locale" content="${localeCodes[lang]}" />`,
+  );
+  html = html.replace(
+    '<meta name="twitter:image" content="assets/images/fethiye-promenade.jpg" />',
+    `<meta name="twitter:image" content="${siteUrl}/assets/images/fethiye-promenade.jpg" />`,
   );
   html = html.replace(
     '<link rel="icon" href="assets/images/app-icon.png" />',
@@ -298,7 +338,7 @@ function renderLanguagePage(lang) {
 
   html = html.replace(
     "</head>",
-    `    <script type="application/ld+json">\n${structuredData(lang, currentUrl)}\n    </script>\n  </head>`,
+    `    <script type="application/ld+json">\n${structuredData(lang, currentUrl)}\n    </script>\n    <script type="application/ld+json">\n${faqStructuredData(lang)}\n    </script>\n  </head>`,
   );
 
   return html;
@@ -308,8 +348,20 @@ function renderRootPage() {
   let html = indexHtml;
   html = html.replace("<title>Fethiye Guide App</title>", `<title>${escapeHtml(titles.de)}</title>`);
   html = html.replace(
+    /<meta property="og:title" content="[^"]*" \/>/,
+    `<meta property="og:title" content="${escapeHtml(titles.de)}" />`,
+  );
+  html = html.replace(
+    /<meta name="twitter:title" content="[^"]*" \/>/,
+    `<meta name="twitter:title" content="${escapeHtml(titles.de)}" />`,
+  );
+  html = html.replace(
     '<meta property="og:image" content="assets/images/fethiye-promenade.jpg" />',
     `<meta property="og:image" content="${siteUrl}/assets/images/fethiye-promenade.jpg" />\n    <meta property="og:url" content="${siteUrl}/" />\n    <meta property="og:type" content="website" />\n    <meta property="og:locale" content="de_DE" />`,
+  );
+  html = html.replace(
+    '<meta name="twitter:image" content="assets/images/fethiye-promenade.jpg" />',
+    `<meta name="twitter:image" content="${siteUrl}/assets/images/fethiye-promenade.jpg" />`,
   );
   html = html.replace(
     '<link rel="icon" href="assets/images/app-icon.png" />',
@@ -318,7 +370,7 @@ function renderRootPage() {
   html = html.replace(/<button class="lang-button[\s\S]*?中文<\/button>/, languageLinks("de", ""));
   html = html.replace(
     "</head>",
-    `    <script type="application/ld+json">\n${structuredData("de", langPaths.de)}\n    </script>\n  </head>`,
+    `    <script type="application/ld+json">\n${structuredData("de", siteUrl + "/")}\n    </script>\n    <script type="application/ld+json">\n${faqStructuredData("de")}\n    </script>\n  </head>`,
   );
   return html;
 }
@@ -369,8 +421,14 @@ function renderUtilityPage(page, lang, rootPrefix, currentUrl) {
     <meta property="og:title" content="${escapeHtml(title)}" />
     <meta property="og:description" content="${escapeHtml(copy.lead)}" />
     <meta property="og:image" content="${siteUrl}/assets/images/fethiye-promenade.jpg" />
+    <meta property="og:image:alt" content="Fethiye promenade by the sea" />
     <meta property="og:url" content="${currentUrl}" />
     <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="${escapeHtml(title)}" />
+    <meta name="twitter:description" content="${escapeHtml(copy.lead)}" />
+    <meta name="twitter:image" content="${siteUrl}/assets/images/fethiye-promenade.jpg" />
+    <meta name="apple-itunes-app" content="app-id=6766074524" />
     <link rel="canonical" href="${currentUrl}" />
     <link rel="icon" href="${rootPrefix}assets/images/app-icon.png" />
     <link rel="stylesheet" href="${rootPrefix}styles.css" />

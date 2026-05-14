@@ -14,6 +14,9 @@ const translations = {
     "signals.map": "Karte",
     "signals.routes": "Tagespläne",
     "signals.saved": "Gespeichert",
+    "proof.platform": "iOS-App im App Store",
+    "proof.saved": "Favoriten lokal speichern",
+    "proof.map": "Karte und Tagesrouten",
     "quick.title": "40+ Orte",
     "quick.text": "Strände, Essen, Ruinen, Aussichtspunkte und Märkte.",
     "intro.one.metric": "4 Tabs",
@@ -63,12 +66,29 @@ const translations = {
     "routes.tags.food": "Food Walk",
     "routes.tags.ancient": "Antikes Fethiye",
     "routes.tags.nature": "Naturausflug",
+    "faq.eyebrow": "FAQ",
+    "faq.title": "Kurz vor dem Download.",
+    "faq.text": "Die wichtigsten Fragen für Reisende, die Fethiye gerade planen oder schon vor Ort sind.",
+    "faq.one.question": "Für wen ist Fethiye Guide gedacht?",
+    "faq.one.answer":
+      "Für Reisende und lokale Besucher, die Strände, Aussichtspunkte, Restaurants, Märkte und Tagesrouten schnell finden möchten.",
+    "faq.two.question": "Welche Orte sind enthalten?",
+    "faq.two.answer":
+      "Die App bündelt Highlights rund um Fethiye und Muğla, darunter Ölüdeniz, Kayaköy, Babadağ, Saklıkent und lokale Food-Spots.",
+    "faq.three.question": "Kann ich Orte speichern?",
+    "faq.three.answer":
+      "Ja. Favoriten und Notizen bleiben lokal auf deinem Gerät, damit du deine Reise vor Ort schneller planen kannst.",
+    "faq.four.question": "Ist die App mehrsprachig?",
+    "faq.four.answer":
+      "Die Website ist auf Deutsch, Englisch, Türkisch, Russisch und Chinesisch verfügbar. Die App ist für internationale Fethiye-Gäste aufgebaut.",
     "closing.eyebrow": "FETHİYE · MUĞLA",
     "closing.title": "Bereit für deinen Fethiye-Tag?",
     "closing.text":
       "Speichere deine Lieblingsorte, finde die passende Route und nimm die besten Strände, Märkte und Aussichtspunkte direkt mit.",
     "closing.primaryCta": "Im App Store laden",
     "closing.secondaryCta": "Routen planen",
+    "installBar.text": "Fethiye Guide für unterwegs",
+    "installBar.cta": "Laden",
   },
   en: {
     metaDescription:
@@ -85,6 +105,9 @@ const translations = {
     "signals.map": "Explore Map",
     "signals.routes": "Day Plans",
     "signals.saved": "Saved",
+    "proof.platform": "iOS app on the App Store",
+    "proof.saved": "Save favorites locally",
+    "proof.map": "Map and day plans",
     "quick.title": "40+ places",
     "quick.text": "Beaches, food, ruins, viewpoints and markets.",
     "intro.one.metric": "4 tabs",
@@ -131,12 +154,29 @@ const translations = {
     "routes.tags.food": "Food Walk",
     "routes.tags.ancient": "Ancient Fethiye",
     "routes.tags.nature": "Nature Escape",
+    "faq.eyebrow": "FAQ",
+    "faq.title": "Before you download.",
+    "faq.text": "The key questions for travelers planning Fethiye or already in town.",
+    "faq.one.question": "Who is Fethiye Guide for?",
+    "faq.one.answer":
+      "For travelers and local visitors who want to quickly find beaches, viewpoints, restaurants, markets and day routes.",
+    "faq.two.question": "Which places are included?",
+    "faq.two.answer":
+      "The app brings together highlights around Fethiye and Muğla, including Ölüdeniz, Kayaköy, Babadağ, Saklıkent and local food spots.",
+    "faq.three.question": "Can I save places?",
+    "faq.three.answer":
+      "Yes. Favorites and notes stay locally on your device so you can plan faster while you are there.",
+    "faq.four.question": "Is the app multilingual?",
+    "faq.four.answer":
+      "The website is available in German, English, Turkish, Russian and Chinese. The app is built for international Fethiye visitors.",
     "closing.eyebrow": "FETHİYE · MUĞLA",
     "closing.title": "Ready for your Fethiye day?",
     "closing.text":
       "Save favorite places, pick the right route and carry the best beaches, markets and viewpoints with you.",
     "closing.primaryCta": "Download on the App Store",
     "closing.secondaryCta": "Plan routes",
+    "installBar.text": "Fethiye Guide on the go",
+    "installBar.cta": "Download",
   },
   tr: {
     metaDescription:
@@ -153,6 +193,9 @@ const translations = {
     "signals.map": "Harita",
     "signals.routes": "Günlük Rotalar",
     "signals.saved": "Kayıtlı",
+    "proof.platform": "App Store'da iOS uygulaması",
+    "proof.saved": "Favorileri yerel kaydet",
+    "proof.map": "Harita ve günlük rotalar",
     "quick.title": "40+ yer",
     "quick.text": "Plajlar, yemek, antik kalıntılar, manzaralar ve pazarlar.",
     "intro.one.metric": "4 sekme",
@@ -199,12 +242,29 @@ const translations = {
     "routes.tags.food": "Lezzet Yürüyüşü",
     "routes.tags.ancient": "Antik Fethiye",
     "routes.tags.nature": "Doğa Kaçamağı",
+    "faq.eyebrow": "SSS",
+    "faq.title": "İndirmeden önce.",
+    "faq.text": "Fethiye gezisini planlayan veya bölgede olan ziyaretçiler için en önemli sorular.",
+    "faq.one.question": "Fethiye Guide kimler için?",
+    "faq.one.answer":
+      "Plajları, manzaraları, restoranları, pazarları ve günlük rotaları hızlı bulmak isteyen gezginler ve yerel ziyaretçiler için.",
+    "faq.two.question": "Hangi yerler var?",
+    "faq.two.answer":
+      "Uygulama Fethiye ve Muğla çevresindeki Ölüdeniz, Kayaköy, Babadağ, Saklıkent ve yerel lezzet noktaları gibi öne çıkan yerleri bir araya getirir.",
+    "faq.three.question": "Yerleri kaydedebilir miyim?",
+    "faq.three.answer":
+      "Evet. Favoriler ve notlar cihazında yerel olarak kalır; böylece geziyi bölgede daha hızlı planlayabilirsin.",
+    "faq.four.question": "Uygulama çok dilli mi?",
+    "faq.four.answer":
+      "Website Almanca, İngilizce, Türkçe, Rusça ve Çince olarak kullanılabilir. Uygulama uluslararası Fethiye ziyaretçileri için tasarlandı.",
     "closing.eyebrow": "FETHİYE · MUĞLA",
     "closing.title": "Fethiye günün için hazır mısın?",
     "closing.text":
       "Favori yerlerini kaydet, doğru rotayı seç ve en iyi plajları, pazarları ve manzaraları yanında taşı.",
     "closing.primaryCta": "App Store'dan indir",
     "closing.secondaryCta": "Rota planla",
+    "installBar.text": "Fethiye Guide yanında",
+    "installBar.cta": "İndir",
   },
   ru: {
     metaDescription:
@@ -221,6 +281,9 @@ const translations = {
     "signals.map": "Карта",
     "signals.routes": "Планы дня",
     "signals.saved": "Сохранено",
+    "proof.platform": "iOS-приложение в App Store",
+    "proof.saved": "Избранное хранится локально",
+    "proof.map": "Карта и маршруты на день",
     "quick.title": "40+ мест",
     "quick.text": "Пляжи, еда, руины, виды и рынки.",
     "intro.one.metric": "4 вкладки",
@@ -267,12 +330,29 @@ const translations = {
     "routes.tags.food": "Гастро-прогулка",
     "routes.tags.ancient": "Древний Фетхие",
     "routes.tags.nature": "Природа",
+    "faq.eyebrow": "FAQ",
+    "faq.title": "Перед загрузкой.",
+    "faq.text": "Главные вопросы для тех, кто планирует Фетхие или уже находится рядом.",
+    "faq.one.question": "Для кого Fethiye Guide?",
+    "faq.one.answer":
+      "Для путешественников и местных гостей, которые хотят быстро находить пляжи, виды, рестораны, рынки и маршруты на день.",
+    "faq.two.question": "Какие места есть в приложении?",
+    "faq.two.answer":
+      "Приложение объединяет основные места вокруг Фетхие и Муглы: Олюдениз, Каякёй, Бабадаг, Саклыкент и локальные гастро-точки.",
+    "faq.three.question": "Можно ли сохранять места?",
+    "faq.three.answer":
+      "Да. Избранное и заметки остаются локально на вашем устройстве, чтобы быстрее планировать поездку на месте.",
+    "faq.four.question": "Приложение многоязычное?",
+    "faq.four.answer":
+      "Сайт доступен на немецком, английском, турецком, русском и китайском языках. Приложение рассчитано на международных гостей Фетхие.",
     "closing.eyebrow": "FETHİYE · MUĞLA",
     "closing.title": "Готовы к дню в Фетхие?",
     "closing.text":
       "Сохраняйте любимые места, выбирайте подходящий маршрут и берите с собой лучшие пляжи, рынки и виды.",
     "closing.primaryCta": "Скачать в App Store",
     "closing.secondaryCta": "Планировать маршрут",
+    "installBar.text": "Fethiye Guide в поездке",
+    "installBar.cta": "Скачать",
   },
   zh: {
     metaDescription:
@@ -288,6 +368,9 @@ const translations = {
     "signals.map": "地图",
     "signals.routes": "一日路线",
     "signals.saved": "收藏",
+    "proof.platform": "App Store 上的 iOS 应用",
+    "proof.saved": "本地保存收藏",
+    "proof.map": "地图和一日路线",
     "quick.title": "40+ 地点",
     "quick.text": "海滩、美食、遗迹、观景点和集市。",
     "intro.one.metric": "4 个标签",
@@ -331,11 +414,28 @@ const translations = {
     "routes.tags.food": "美食漫步",
     "routes.tags.ancient": "古代费特希耶",
     "routes.tags.nature": "自然出游",
+    "faq.eyebrow": "常见问题",
+    "faq.title": "下载前了解。",
+    "faq.text": "为正在计划费特希耶行程或已经在当地的旅行者准备的核心问题。",
+    "faq.one.question": "Fethiye Guide 适合谁？",
+    "faq.one.answer":
+      "适合想快速找到海滩、观景点、餐厅、集市和一日路线的旅行者及本地访客。",
+    "faq.two.question": "包含哪些地点？",
+    "faq.two.answer":
+      "应用汇集费特希耶和穆拉周边亮点，包括 Ölüdeniz、Kayaköy、Babadağ、Saklıkent 和本地美食地点。",
+    "faq.three.question": "可以保存地点吗？",
+    "faq.three.answer":
+      "可以。收藏和备注会留在你的设备本地，方便你在当地更快规划行程。",
+    "faq.four.question": "应用支持多语言吗？",
+    "faq.four.answer":
+      "网站提供德语、英语、土耳其语、俄语和中文版本。应用面向国际费特希耶游客设计。",
     "closing.eyebrow": "FETHİYE · MUĞLA",
     "closing.title": "准备好开始你的费特希耶一天了吗？",
     "closing.text": "收藏喜欢的地点，选择合适路线，把最好的海滩、集市和观景点带在身边。",
     "closing.primaryCta": "在 App Store 下载",
     "closing.secondaryCta": "规划路线",
+    "installBar.text": "随身使用 Fethiye Guide",
+    "installBar.cta": "下载",
   },
 };
 
