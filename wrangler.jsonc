@@ -1,0 +1,31 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "fethiye-events-api",
+  "main": "src/worker.ts",
+  "compatibility_date": "2026-05-14",
+  "compatibility_flags": ["nodejs_compat"],
+  "routes": [
+    {
+      "pattern": "fethiye-app.com/api/*",
+      "zone_name": "fethiye-app.com"
+    }
+  ],
+  "triggers": {
+    "crons": ["15 4 * * *"]
+  },
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  },
+  "vars": {
+    "EVENTS_AUTO_PUBLISH_THRESHOLD": "0.86",
+    "EVENTS_IMPORT_USER_AGENT": "FethiyeGuideBot/0.1 (+https://fethiye-app.com/support/)"
+  },
+  "d1_databases": [
+    {
+      "binding": "EVENTS_DB",
+      "database_name": "fethiye_events",
+      "database_id": "00000000-0000-0000-0000-000000000000"
+    }
+  ]
+}
