@@ -37,8 +37,47 @@ async function fetchHtml(fetcher: typeof fetch, url: string, userAgent: string):
   }
 }
 
+function pharmacyIdentity(value: PublicDutyPharmacy): { namePhone: string; nameArea: string } {
+  const normalizedName = value.name.toLocaleLowerCase("tr");
+  return {
+    namePhone: `${normalizedName}|${value.phone}`,
+    nameArea: `${normalizedName}|${value.area.toLocaleLowerCase("tr")}`,
+  };
+}
+
+function matchesAnyPrimarySource(value: PublicDutyPharmacy, primaryRows: PublicDutyPharmacy[]): boolean {
+  const identity = pharmacyIdentity(value);
+  return primaryRows.some((primary) => {
+    const primaryIdentity = pharmacyIdentity(primary);
+    return primaryIdentity.namePhone === identity.namePhone || primaryIdentity.nameArea === identity.nameArea;
+  });
+}
+
+interface SourcePharmacyRows {
+  source: string;
+  pharmacies: PublicDutyPharmacy[];
+}
+
+export function mergeSourcePharmacyRows(collectedBySource: SourcePharmacyRows[]): PublicDutyPharmacy[] {
+  const primaryRows = collectedBySource.find((entry) => entry.source === "eczaneler-gen-tr")?.pharmacies || [];
+
+  if (primaryRows.length === 0) {
+    return collectedBySource.flatMap((entry) => entry.pharmacies);
+  }
+
+  const allowFallbackAdditions = primaryRows.length < 4;
+  return primaryRows.concat(
+    collectedBySource.flatMap((entry) => {
+      if (entry.source === "eczaneler-gen-tr") {
+        return [];
+      }
+      return allowFallbackAdditions ? entry.pharmacies : entry.pharmacies.filter((pharmacy) => matchesAnyPrimarySource(pharmacy, primaryRows));
+    }),
+  );
+}
+
 async function scrapeCity(config: DutyPharmacyCityConfig, fetcher: typeof fetch, userAgent: string): Promise<PublicDutyPharmacy[]> {
-  const collected: PublicDutyPharmacy[] = [];
+  const collectedBySource: SourcePharmacyRows[] = [];
   const errors: string[] = [];
 
   for (const source of config.sources) {
@@ -50,7 +89,7 @@ async function scrapeCity(config: DutyPharmacyCityConfig, fetcher: typeof fetch,
         errors.push(`${source.name}: ${message}`);
         console.error(JSON.stringify({ message: "duty_pharmacy_scrape_failure", city: config.city, source: source.name, sourceUrl: source.url, error: message }));
       }
-      collected.push(...parsed);
+      collectedBySource.push({ source: source.kind, pharmacies: parsed });
     } catch (error) {
       const message = error instanceof Error ? error.message : "Unknown scrape error";
       errors.push(`${source.name}: ${message}`);
@@ -60,7 +99,7 @@ async function scrapeCity(config: DutyPharmacyCityConfig, fetcher: typeof fetch,
     await wait(500);
   }
 
-  const deduped = dedupePharmacies(collected);
+  const deduped = dedupePharmacies(mergeSourcePharmacyRows(collectedBySource));
   if (deduped.length === 0 && errors.length > 0) {
     throw new Error(errors.join("; "));
   }

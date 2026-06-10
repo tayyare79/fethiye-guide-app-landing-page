@@ -2,7 +2,7 @@ import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { dutyPharmacyConfigs } from "../src/pharmacies/cities";
 import { dedupePharmacies, parseDutyPharmacies } from "../src/pharmacies/parser";
-import { importDutyPharmacies } from "../src/pharmacies/importer";
+import { importDutyPharmacies, mergeSourcePharmacyRows } from "../src/pharmacies/importer";
 import { handleRequest } from "../src/api";
 import type { PublicDutyPharmacy } from "../src/pharmacies/types";
 
@@ -166,9 +166,66 @@ describe("duty pharmacy parsers", () => {
 
     expect(dedupePharmacies(rows)).toEqual([rows[1]]);
   });
+
+  it("keeps fallback additions only when the primary source is sparse", () => {
+    const primary = Array.from({ length: 4 }, (_, index) => ({
+      name: `Primary ${index} Eczanesi`,
+      address: `Primary address ${index}`,
+      phone: `+9025261100${index}`,
+      area: "Merkez",
+      sourceName: "Eczaneler.gen.tr",
+      sourceURL: "https://example.com/primary",
+    }));
+    const fallbackOnly = {
+      name: "Fallback Eczanesi",
+      address: "Fallback address",
+      phone: "+902526220000",
+      area: "Merkez",
+      sourceName: "Nöbetçi Eczaneleri",
+      sourceURL: "https://example.com/fallback",
+    };
+
+    expect(
+      mergeSourcePharmacyRows([
+        { source: "eczaneler-gen-tr", pharmacies: primary },
+        { source: "nobetci-eczaneleri", pharmacies: [fallbackOnly] },
+      ]),
+    ).toHaveLength(4);
+    expect(
+      mergeSourcePharmacyRows([
+        { source: "eczaneler-gen-tr", pharmacies: primary.slice(0, 2) },
+        { source: "nobetci-eczaneleri", pharmacies: [fallbackOnly] },
+      ]),
+    ).toHaveLength(3);
+  });
 });
 
 describe("duty pharmacy API", () => {
+  it("does not merge fallback rows from a different duty window when the primary source is available", async () => {
+    const db = createSnapshotDb();
+    const env = { EVENTS_DB: db } as unknown as Env;
+    const fixtureByUrl = new Map([
+      [dutyPharmacyConfigs.fethiye.sources[0].url, readFixture("eczaneler-fethiye.html")],
+      [dutyPharmacyConfigs.fethiye.sources[1].url, readFixture("nobetci-fethiye.html")],
+    ]);
+    const fixtureFetch = async (input: URL | RequestInfo) => {
+      const url = input instanceof Request ? input.url : String(input);
+      return new Response(fixtureByUrl.get(url) || readFixture("cloudflare-challenge.html"), { status: 200 });
+    };
+
+    await importDutyPharmacies(env, fixtureFetch as typeof fetch);
+
+    const response = await handleRequest(new Request("https://fethiye-app.com/api/duty-pharmacies?city=fethiye"), env);
+    const body = await response.json<{ fetchedAt: string; stale: boolean; pharmacies: PublicDutyPharmacy[] }>();
+    const names = body.pharmacies.map((pharmacy) => pharmacy.name);
+
+    expect(response.status).toBe(200);
+    expect(body.stale).toBe(false);
+    expect(body.pharmacies).toHaveLength(7);
+    expect(names).toContain("Balcı Eczanesi");
+    expect(names).not.toContain("Altay Eczanesi");
+  });
+
   it("keeps serving last-good data as stale after scrape failures", async () => {
     const db = createSnapshotDb([
       {
