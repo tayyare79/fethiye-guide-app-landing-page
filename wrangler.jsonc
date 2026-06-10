@@ -11,7 +11,7 @@
     }
   ],
   "triggers": {
-    "crons": ["15 4 * * *"]
+    "crons": ["15 4 * * *", "*/30 * * * *"]
   },
   "observability": {
     "enabled": true,
@@ -19,7 +19,8 @@
   },
   "vars": {
     "EVENTS_AUTO_PUBLISH_THRESHOLD": "0.86",
-    "EVENTS_IMPORT_USER_AGENT": "FethiyeGuideBot/0.1 (+https://fethiye-app.com/support/)"
+    "EVENTS_IMPORT_USER_AGENT": "FethiyeGuideBot/0.1 (+https://fethiye-app.com/support/)",
+    "PHARMACY_IMPORT_USER_AGENT": "FethiyeGuideBot/0.1 (+https://fethiye-app.com/support/)"
   },
   "d1_databases": [
     {

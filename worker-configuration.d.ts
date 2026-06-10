@@ -9,6 +9,7 @@ declare namespace Cloudflare {
 		EVENTS_DB: D1Database;
 		EVENTS_AUTO_PUBLISH_THRESHOLD: "0.86";
 		EVENTS_IMPORT_USER_AGENT: "FethiyeGuideBot/0.1 (+https://fethiye-app.com/support/)";
+		PHARMACY_IMPORT_USER_AGENT: "FethiyeGuideBot/0.1 (+https://fethiye-app.com/support/)";
 	}
 }
 interface Env extends Cloudflare.Env {}
@@ -16,7 +17,7 @@ type StringifyValues<EnvType extends Record<string, unknown>> = {
 	[Binding in keyof EnvType]: EnvType[Binding] extends string ? EnvType[Binding] : string;
 };
 declare namespace NodeJS {
-	interface ProcessEnv extends StringifyValues<Pick<Cloudflare.Env, "EVENTS_AUTO_PUBLISH_THRESHOLD" | "EVENTS_IMPORT_USER_AGENT">> {}
+	interface ProcessEnv extends StringifyValues<Pick<Cloudflare.Env, "EVENTS_AUTO_PUBLISH_THRESHOLD" | "EVENTS_IMPORT_USER_AGENT" | "PHARMACY_IMPORT_USER_AGENT">> {}
 }
 
 // Begin runtime types

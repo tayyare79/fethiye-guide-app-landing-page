@@ -31,11 +31,14 @@ const sampleRow = {
 
 function createEnv(): Env {
   const db = {
-    prepare(_query: string) {
+    prepare(query: string) {
       return {
         bind() {
           return {
             async all() {
+              if (query.includes("duty_pharmacy_snapshots")) {
+                return { results: [] };
+              }
               return { results: [sampleRow] };
             },
           };
