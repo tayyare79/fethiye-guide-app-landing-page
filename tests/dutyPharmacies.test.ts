@@ -88,6 +88,18 @@ describe("duty pharmacy parsers", () => {
     expect(pharmacies[0]?.phone).toMatch(/^\+90\d+$/);
   });
 
+  it("reads only the final duty window from multi-day Eczaneler.gen.tr HTML", () => {
+    const config = dutyPharmacyConfigs.fethiye;
+    const pharmacies = parseDutyPharmacies(readFixture("eczaneler-fethiye.html"), config, config.sources[0]);
+    const names = pharmacies.map((pharmacy) => pharmacy.name);
+
+    expect(pharmacies).toHaveLength(7);
+    expect(names).toContain("Balcı Eczanesi");
+    expect(names).toContain("Aybek Eczanesi");
+    expect(names).not.toContain("Altay Eczanesi");
+    expect(names).not.toContain("Likya Eczanesi");
+  });
+
   it("parses Nobetci Eczaneleri real Fethiye fixture", () => {
     const config = dutyPharmacyConfigs.fethiye;
     const source = config.sources[1];
@@ -130,6 +142,29 @@ describe("duty pharmacy parsers", () => {
     ];
 
     expect(dedupePharmacies(rows)).toHaveLength(1);
+  });
+
+  it("dedupes same normalized name and area with Eczaneler.gen.tr priority", () => {
+    const rows: PublicDutyPharmacy[] = [
+      {
+        name: "Candan Eczanesi",
+        address: "Fallback address",
+        phone: "+902526110323",
+        area: "Patlangıç",
+        sourceName: "Nöbetçi Eczaneleri",
+        sourceURL: "https://example.com/fallback",
+      },
+      {
+        name: "Candan Eczanesi",
+        address: "Primary address",
+        phone: "+902526110111",
+        area: "Patlangıç",
+        sourceName: "Eczaneler.gen.tr",
+        sourceURL: "https://example.com/primary",
+      },
+    ];
+
+    expect(dedupePharmacies(rows)).toEqual([rows[1]]);
   });
 });
 

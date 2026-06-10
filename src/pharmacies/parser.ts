@@ -140,24 +140,47 @@ function makePharmacy(
 }
 
 export function dedupePharmacies(pharmacies: PublicDutyPharmacy[]): PublicDutyPharmacy[] {
-  const seen = new Set<string>();
-  return pharmacies.filter((pharmacy) => {
-    const key = `${pharmacy.name.toLocaleLowerCase("tr")}|${pharmacy.phone}`;
-    if (seen.has(key)) {
-      return false;
+  const rows: PublicDutyPharmacy[] = [];
+
+  for (const pharmacy of pharmacies) {
+    const duplicateIndex = rows.findIndex(
+      (row) =>
+        `${row.name.toLocaleLowerCase("tr")}|${row.phone}` === `${pharmacy.name.toLocaleLowerCase("tr")}|${pharmacy.phone}` ||
+        `${row.name.toLocaleLowerCase("tr")}|${row.area.toLocaleLowerCase("tr")}` === `${pharmacy.name.toLocaleLowerCase("tr")}|${pharmacy.area.toLocaleLowerCase("tr")}`,
+    );
+
+    if (duplicateIndex === -1) {
+      rows.push(pharmacy);
+      continue;
     }
-    seen.add(key);
-    return true;
-  });
+
+    if (pharmacy.sourceName === "Eczaneler.gen.tr" && rows[duplicateIndex].sourceName !== "Eczaneler.gen.tr") {
+      rows[duplicateIndex] = pharmacy;
+    }
+  }
+
+  return rows;
+}
+
+function extractLastEczanelerSection(html: string): string {
+  const headerPattern = /<div[^>]*alert alert-warning[^>]*>[\s\S]*?akşamından[\s\S]*?sabahına kadar[\s\S]*?<\/div>/gi;
+  let lastHeaderIndex = -1;
+  let match: RegExpExecArray | null;
+
+  while ((match = headerPattern.exec(html)) !== null) {
+    lastHeaderIndex = match.index;
+  }
+
+  return lastHeaderIndex === -1 ? html : html.slice(lastHeaderIndex);
 }
 
 function parseEczanelerCards(html: string, config: DutyPharmacyCityConfig, source: DutyPharmacySource): PublicDutyPharmacy[] {
-  const firstSection = html.match(/alert alert-warning[\s\S]*?(?=<\/table><\/div>\s*<div class="container|<\/table><\/div>\s*<br>|$)/i)?.[0] || html;
+  const currentSection = extractLastEczanelerSection(html);
   const cardPattern = /<span class=["']isim["']>([\s\S]*?)<\/span>[\s\S]*?<div class=['"]col-lg-6['"]>([\s\S]*?)<\/div>\s*<div class=['"]col-lg-3 py-lg-2['"]>([\s\S]*?)<\/div>/gi;
   const rows: PublicDutyPharmacy[] = [];
   let match: RegExpExecArray | null;
 
-  while ((match = cardPattern.exec(firstSection)) !== null) {
+  while ((match = cardPattern.exec(currentSection)) !== null) {
     const [, nameHtml, addressHtml, phoneHtml] = match;
     const badge = addressHtml.match(/bg-secondary[^>]*>([\s\S]*?)<\/span>/i)?.[1] || "";
     const address = stripHtml(addressHtml.split(/<div class=["']py-2|<div class=["']py-1|<div class=["']my-2/i)[0] || addressHtml);
@@ -172,7 +195,13 @@ function parseEczanelerCards(html: string, config: DutyPharmacyCityConfig, sourc
 
 function parseEczanelerLines(html: string, config: DutyPharmacyCityConfig, source: DutyPharmacySource): PublicDutyPharmacy[] {
   const lines = htmlToLines(html);
-  const headerIndex = lines.findIndex((line) => line.includes("akşamından") && line.includes("sabahına kadar"));
+  let headerIndex = -1;
+  for (let index = lines.length - 1; index >= 0; index -= 1) {
+    if (lines[index].includes("akşamından") && lines[index].includes("sabahına kadar")) {
+      headerIndex = index;
+      break;
+    }
+  }
   if (headerIndex === -1) {
     return [];
   }
